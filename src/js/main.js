@@ -218,16 +218,23 @@ function agregarMascota(arrayMascotas) {
 // Función para listar los dueños
 
 function listarDueños(arrayMascotas) {
+    // Primero obtenemos solo la información de los dueños registrados
     let dueños = arrayMascotas.map(mascota => {
         return mascota.propietario
     })
+    // Listamos la información del array de dueños registrados
     listar(dueños, "dueños")
 }
 
+// Función para obtener mascotas de un dueño
+
 function obtenerMascotasDueños(arrayMascotas) {
+    // Primero obtenemos el dueño que se quiere buscar
     let dueño = prompt("Ingresa el nombre del dueño que deseas verificar")
+    // Obtenemos el array de mascotas de ese dueño específico
     let mascotasDueños = arrayMascotas.filter (mascota => {
         return mascota.propietario.nombre === dueño
     })
+    // Listamos el array de mascotas de un dueño específico
     listar(mascotasDueños, dueño)
 }
