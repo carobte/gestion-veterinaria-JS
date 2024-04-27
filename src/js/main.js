@@ -26,27 +26,22 @@ const menu = () => {
         case 1:
             console.log("Estás son nuestras mascotas registradas:")
             listar(mascotas, "mascotas")
-            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
             break;
         case 2:
             console.log("Agregando mascotas...")
             agregarMascota()
-            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
             break;
         case 3:
             console.log("Dueños registrados:")
             listarDueños()
-            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
             break;
         case 4:
             console.log("Buscando mascota...")
             obtenerMascotaNombre()
-            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
             break;
         case 5:
             console.log("Buscando mascota por dueño...")
             obtenerMascotasDueños()
-            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
             break;
         case 6:
             console.log("Actualizando mascota")
@@ -55,7 +50,6 @@ const menu = () => {
         case 7:
             console.log("Eliminando mascota")
             eliminarMascotaNombre()
-            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
             break;
         case 0:
             console.log("Gracias por consultar información de la veterinaria, vuelva pronto")
@@ -223,20 +217,7 @@ function listar(array, info) {
         // console.table para que su visualización sea más adecuada
         console.table(array)
     }
-}
-
-// Función para obtener los datos dueño
-
-function obtenerDatosDueño() {
-
-    // Solicitamos al usuario todos los datos del propietario de la mascota.
-    let nombre = prompt("Nombre del dueño").toLowerCase()
-    let documento = prompt("Documento del dueño").toLowerCase()
-    let telefono = parseInt(prompt("Teléfono del dueño"))
-    let correo = prompt("Correo del dueño").toLowerCase()
-
-    // Retornamos un objeto con la información del dueño para posteriormente agregarlo a la mascota
-    return { nombre, documento, telefono, correo }
+    menu()
 }
 
 // Función para obtener todos los datos de la mascota
@@ -256,7 +237,21 @@ function obtenerDatosMascota() {
     return { nombre, especie, raza, edad, peso, estado }
 }
 
-// Función para agregar mascotas, recibe el array donde se va a agregar
+// Función para obtener los datos dueño
+
+function obtenerDatosDueño() {
+
+    // Solicitamos al usuario todos los datos del propietario de la mascota.
+    let nombre = prompt("Nombre del dueño").toLowerCase()
+    let documento = prompt("Documento del dueño").toLowerCase()
+    let telefono = parseInt(prompt("Teléfono del dueño"))
+    let correo = prompt("Correo del dueño").toLowerCase()
+
+    // Retornamos un objeto con la información del dueño para posteriormente agregarlo a la mascota
+    return { nombre, documento, telefono, correo }
+}
+
+// Función para agregar mascotas
 
 function agregarMascota() {
     // Obtener la información que requerimos
@@ -267,6 +262,7 @@ function agregarMascota() {
     // Enviamos la información de la mascota al array
     mascotas.push(mascota)
     console.log(`La mascota ${mascota.nombre} de ${mascota.propietario.nombre} fue agregada satisfactoriamente`)
+    menu()
 }
 
 // Función para listar los dueños
@@ -327,6 +323,7 @@ function eliminarMascotaNombre() {
         // Hacemos saber que fue eliminada satisfactoriamente
         console.error(`La mascota ${mascotaBuscar} ha sido eliminada satisfactoriamente`)
     }
+    menu()
 }
 
 function actualizarMascota() {
@@ -364,9 +361,10 @@ function actualizarMascota() {
             }
         } 
     })
+
     // Si no encuentra una mascota, le hacemos saber al usuario que no existe y ejecutamos el menu nuevamente.
     if (!mascotaExiste){
         console.warn(`Lo sentimos, no pudimos encontrar la mascota ${mascotaBuscar} registrada`)
-        menu()
     }
+    menu()
 }
