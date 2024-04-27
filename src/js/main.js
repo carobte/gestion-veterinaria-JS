@@ -1,19 +1,71 @@
 // Saludo de bienvenida, nos ayuda también a verificar que los archivos estén conectados adecuadamente.
 
 console.log("Bienvenido a la veterinaria Riwi")
+console.log("Escribe menu() y presiona enter para comenzar")
 
-/* let opcion = parseInt(prompt(`Ingresa una de las siguientes opciones:
+// Función para mostrar el menú, sirve para iniciar y continuar el sistema
 
-1. Ver mascotas registradas
-2. Registrar una nueva mascota
-3. Ver lista de dueños
-4. Buscar mascota por nombre
-5. Buscar mascotas pertenecientes al mismo dueño
-6. Actualizar información de una mascota
-7. Eliminar una mascota
-0. Salir`
+const menu = () => {
 
-)) */
+    // Solicitamos una opción al usuario
+
+    let opcion = parseInt(prompt(`Ingresa una de las siguientes opciones:
+        1. Ver mascotas registradas
+        2. Registrar una nueva mascota
+        3. Ver lista de dueños
+        4. Buscar mascota por nombre
+        5. Buscar mascotas pertenecientes al mismo dueño
+        6. Actualizar información de una mascota (*)
+        7. Eliminar una mascota
+        0. Salir`
+    ))
+
+    // Ejecutamos funciones según la opción del usuario y le recordamos el comando para que continue navegando por la aplicación
+
+    switch (opcion) {
+        case 1:
+            console.log("Estás son nuestras mascotas registradas:")
+            listar(mascotas, "mascotas")
+            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
+            break;
+        case 2:
+            console.log("Agregando mascotas...")
+            agregarMascota()
+            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
+            break;
+        case 3:
+            console.log("Dueños registrados:")
+            listarDueños()
+            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
+            break;
+        case 4:
+            console.log("Buscando mascota...")
+            obtenerMascotaNombre()
+            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
+            break;
+        case 5:
+            console.log("Buscando mascota por dueño...")
+            obtenerMascotasDueños()
+            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
+            break;
+        case 6:
+            console.log("Actualizando mascota")
+            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
+            break;
+        case 7:
+            console.log("Eliminando mascota")
+            eliminarMascotaNombre()
+            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
+            break;
+        case 0:
+            console.log("Gracias por consultar información de la veterinaria, vuelva pronto")
+            break;
+        default:
+            console.log("Opción incorrecta, intenta nuevamente")
+            menu()
+            break;
+    }
+}
 
 // Array inicial de las mascotas con los datos requeridos.
 
@@ -175,13 +227,13 @@ function listar(array, info) {
 
 // Función para obtener los datos dueño
 
-function obtenerDatosDueño() { 
+function obtenerDatosDueño() {
 
     let nombre = prompt("Nombre del dueño").toLowerCase()
     let documento = prompt("Documento del dueño").toLowerCase()
     let telefono = parseInt(prompt("Teléfono del dueño"))
     let correo = prompt("Correo del dueño").toLowerCase()
-    
+
     //Retornamos un objeto con la información del dueño
     return { nombre, documento, telefono, correo }
 }
@@ -192,14 +244,14 @@ function obtenerDatosMascota() {
 
     let nombre = prompt("Ingrese el nombre de la mascota").toLowerCase()
     let especie = prompt("Ingrese la especie de la mascota").toLowerCase()
-    let raza = prompt("Ingrese la raza de la mascota").toLowerCase() 
+    let raza = prompt("Ingrese la raza de la mascota").toLowerCase()
     let fecha = parseInt(prompt("Ingrese el año de nacimiento de la mascota"))
     let edad = new Date().getFullYear() - fecha
-    let peso = prompt("Ingrese el peso de la mascota").toLowerCase() 
+    let peso = prompt("Ingrese el peso de la mascota").toLowerCase()
     let estado = prompt("Ingrese el estado de la mascota").toLowerCase()
-        
+
     // Retornamos un objeto con toda la información recolectada
-    return {nombre, especie, raza, edad, peso, estado}
+    return { nombre, especie, raza, edad, peso, estado }
 }
 
 // Función para agregar mascotas, recibe el array donde se va a agregar
@@ -232,7 +284,7 @@ function obtenerMascotasDueños() {
     // Primero obtenemos el dueño que se quiere buscar
     let dueño = prompt("Ingresa el nombre del dueño que deseas verificar")
     // Obtenemos el array de mascotas de ese dueño específico
-    let mascotasDueños = mascotas.filter (mascota => {
+    let mascotasDueños = mascotas.filter(mascota => {
         return mascota.propietario.nombre === dueño
     })
     // Listamos el array de mascotas de un dueño específico
@@ -253,8 +305,11 @@ function obtenerMascotaNombre() {
 
 function eliminarMascotaNombre() {
     let mascotaBuscar = prompt("Ingresa el nombre de la mascota que deseas eliminar")
-    mascotas = mascotas.filter(mascota => {
-        return mascota.nombre !== mascotaBuscar
-    })
-    console.log(`${mascotaBuscar} ha sido eliminada satisfactoriamente`)
+    let confirmacion = confirm(`¿Está seguro que desea eliminar a ${mascotaBuscar}?`)
+    if (confirmacion) {
+        mascotas = mascotas.filter(mascota => {
+            return mascota.nombre !== mascotaBuscar
+        })
+        console.log(`La mascota ${mascotaBuscar} ha sido eliminada satisfactoriamente`)
+    }
 }
