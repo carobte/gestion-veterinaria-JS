@@ -177,10 +177,10 @@ function listar(array, info) {
 
 function obtenerDatosDueño() { 
 
-    let nombre = prompt("Nombre del dueño")
-    let documento = prompt("Documento del dueño")
+    let nombre = prompt("Nombre del dueño").toLowerCase()
+    let documento = prompt("Documento del dueño").toLowerCase()
     let telefono = parseInt(prompt("Teléfono del dueño"))
-    let correo = prompt("Correo del dueño")
+    let correo = prompt("Correo del dueño").toLowerCase()
     
     //Retornamos un objeto con la información del dueño
     return { nombre, documento, telefono, correo }
@@ -190,13 +190,13 @@ function obtenerDatosDueño() {
 
 function obtenerDatosMascota() {
 
-    let nombre = prompt("Ingrese el nombre de la mascota") 
-    let especie = prompt("Ingrese la especie de la mascota") 
-    let raza = prompt("Ingrese la raza de la mascota") 
+    let nombre = prompt("Ingrese el nombre de la mascota").toLowerCase()
+    let especie = prompt("Ingrese la especie de la mascota").toLowerCase()
+    let raza = prompt("Ingrese la raza de la mascota").toLowerCase() 
     let fecha = parseInt(prompt("Ingrese el año de nacimiento de la mascota"))
     let edad = new Date().getFullYear() - fecha
-    let peso = prompt("Ingrese el peso de la mascota") 
-    let estado = prompt("Ingrese el estado de la mascota") 
+    let peso = prompt("Ingrese el peso de la mascota").toLowerCase() 
+    let estado = prompt("Ingrese el estado de la mascota").toLowerCase()
         
     // Retornamos un objeto con toda la información recolectada
     return {nombre, especie, raza, edad, peso, estado}
