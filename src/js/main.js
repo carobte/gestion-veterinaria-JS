@@ -19,140 +19,140 @@ console.log("Bienvenido a la veterinaria Riwi")
 
 let mascotas = [
     {
-        nombre: "Max",
-        especie: "Perro",
-        raza: "Labrador Retriever",
+        nombre: "max",
+        especie: "perro",
+        raza: "labrador retriever",
         edad: 5,
         peso: "25",
         estado: "critico",
         propietario: {
-            nombre: "Juan Pérez",
+            nombre: "juan perez",
             documento: "12345678",
             telefono: "555-123-4567",
             correo: "juanperez@example.com"
         }
     },
     {
-        nombre: "Luna",
-        especie: "Gato",
-        raza: "Siames",
+        nombre: "luna",
+        especie: "gato",
+        raza: "siames",
         edad: 3,
         peso: "10",
         estado: "estable",
         propietario: {
-            nombre: "María García",
+            nombre: "maria garcia",
             documento: "87654321",
             telefono: "555-987-6543",
             correo: "mariagarcia@example.com"
         }
     },
     {
-        nombre: "Rocky",
-        especie: "Perro",
-        raza: "Bulldog",
+        nombre: "rocky",
+        especie: "perro",
+        raza: "bulldog",
         edad: 2,
         peso: "20",
         estado: "critico",
         propietario: {
-            nombre: "Pedro Martínez",
+            nombre: "pedro martinez",
             documento: "13579246",
             telefono: "555-246-8024",
             correo: "pedromartinez@example.com"
         }
     },
     {
-        nombre: "Coco",
-        especie: "Pájaro",
-        raza: "Periquito",
+        nombre: "coco",
+        especie: "pajaro",
+        raza: "periquito",
         edad: 1,
         peso: "0.1",
         estado: "estable",
         propietario: {
-            nombre: "Ana López",
+            nombre: "ana lopez",
             documento: "98765432",
             telefono: "555-333-4444",
             correo: "anlopez@example.com"
         }
     },
     {
-        nombre: "Simba",
-        especie: "Gato",
-        raza: "Persa",
+        nombre: "simba",
+        especie: "gato",
+        raza: "persa",
         edad: 4,
         peso: "15",
         estado: "estable",
         propietario: {
-            nombre: "Carlos Ramírez",
+            nombre: "carlos ramirez",
             documento: "24681357",
             telefono: "555-876-5432",
             correo: "carlosramirez@example.com"
         }
     },
     {
-        nombre: "Bella",
-        especie: "Perro",
-        raza: "Chihuahua",
+        nombre: "bella",
+        especie: "perro",
+        raza: "chihuahua",
         edad: 8,
         peso: "3",
         estado: "critico",
         propietario: {
-            nombre: "Laura González",
+            nombre: "laura gonzalez",
             documento: "65432198",
             telefono: "555-111-2222",
             correo: "lauragonzalez@example.com"
         }
     },
     {
-        nombre: "Nemo",
-        especie: "Pez",
-        raza: "Pez payaso",
+        nombre: "nemo",
+        especie: "pez",
+        raza: "pez payaso",
         edad: 2,
         peso: "0.05",
         estado: "estable",
         propietario: {
-            nombre: "Roberto Díaz",
+            nombre: "roberto diaz",
             documento: "36925814",
             telefono: "555-777-8888",
             correo: "robertodiaz@example.com"
         }
     },
     {
-        nombre: "Lucky",
-        especie: "Perro",
-        raza: "Golden Retriever",
+        nombre: "lucky",
+        especie: "perro",
+        raza: "golden retriever",
         edad: 6,
         peso: "30",
         estado: "estable",
         propietario: {
-            nombre: "Fernanda Castro",
+            nombre: "fernanda castro",
             documento: "78521436",
             telefono: "555-666-9999",
             correo: "fernandacastro@example.com"
         }
     },
     {
-        nombre: "Milo",
-        especie: "Gato",
-        raza: "Maine Coon",
+        nombre: "milo",
+        especie: "gato",
+        raza: "maine coon",
         edad: 2,
         peso: "12",
         estado: "estable",
         propietario: {
-            nombre: "David Ruiz",
+            nombre: "david ruiz",
             documento: "21436587",
             telefono: "555-222-3333",
             correo: "davidruiz@example.com"
         }
     },
     {
-        nombre: "Lola",
-        especie: "Conejo",
-        raza: "Holandés",
+        nombre: "lola",
+        especie: "conejo",
+        raza: "holandes",
         edad: 1,
         peso: "2",
         estado: "critico",
         propietario: {
-            nombre: "Sofía Martín",
+            nombre: "sofia martin",
             documento: "63254178",
             telefono: "555-444-5555",
             correo: "sofiamartin@example.com"
