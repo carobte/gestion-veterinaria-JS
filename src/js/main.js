@@ -15,7 +15,7 @@ const menu = () => {
         3. Ver lista de dueños
         4. Buscar mascota por nombre
         5. Buscar mascotas pertenecientes al mismo dueño
-        6. Actualizar información de una mascota (*)
+        6. Actualizar información de una mascota
         7. Eliminar una mascota
         0. Salir`
     ))
