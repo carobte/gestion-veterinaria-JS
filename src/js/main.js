@@ -15,6 +15,8 @@ console.log("Bienvenido a la veterinaria Riwi")
 
 )) */
 
+// Array inicial de las mascotas con los datos requeridos.
+
 let mascotas = [
     {
         nombre: "Max",
@@ -185,6 +187,7 @@ function obtenerDatosDueño() {
 }
 
 // Función para obtener todos los datos de la mascota
+
 function obtenerDatosMascota() {
 
     let nombre = prompt("Ingrese el nombre de la mascota") 
@@ -197,13 +200,17 @@ function obtenerDatosMascota() {
         
     // Retornamos un objeto con toda la información recolectada
     return {nombre, especie, raza, edad, peso, estado}
-
 }
 
+// Función para agregar mascotas, recibe el array donde se va a agregar
+
 function agregarMascota(arrayMascotas) {
+    // Obtener la información que requerimos
     let mascota = obtenerDatosMascota()
     let propietario = obtenerDatosDueño()
+    // Le pasamos la información del propietario a la mascota
     mascota.propietario = propietario
+    // Enviamos la información de la mascota al array
     arrayMascotas.push(mascota)
     console.log(`La mascota ${mascota.nombre} de ${mascota.propietario.nombre} fue agregada satisfactoriamente`)
 }
