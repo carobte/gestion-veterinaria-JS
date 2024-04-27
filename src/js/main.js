@@ -203,9 +203,8 @@ function obtenerDatosMascota() {
 function agregarMascota(arrayMascotas) {
     let mascota = obtenerDatosMascota()
     let propietario = obtenerDatosDueño()
-    mascota.propietario = propietario // se guarda como [object object]
-    console.log(mascota)
+    mascota.propietario = propietario
     arrayMascotas.push(mascota)
-    console.log(`La mascota ${mascota.nombre} fue agregada satisfactoriamente`)
+    console.log(`La mascota ${mascota.nombre} de ${mascota.propietario.nombre} fue agregada satisfactoriamente`)
 }
 
