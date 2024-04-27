@@ -322,8 +322,10 @@ function eliminarMascotaNombre() {
 
 function actualizarMascota() {
     let mascotaBuscar = prompt("Ingresa el nombre de la mascota que deseas editar").toLowerCase()
+    let mascotaExiste = false
     mascotas.forEach(mascota => {
         if (mascota.nombre === mascotaBuscar) {
+            mascotaExiste = true
             let propiedad = prompt("¿Qué deseas actualizar? (nombre, especie,raza,peso, estado, propietario").toLowerCase()
             if (propiedad === "propietario") {
                 let propietarioActualizado = obtenerDatosDueño()
@@ -342,10 +344,10 @@ function actualizarMascota() {
                     console.table(mascota)
                 }
             }
-        } else {
-            console.warn(`La mascota ${mascotaBuscar} no se encuentra registrada`)
         } 
-        // El else aparece cada vez porque está dentro del forEach, buscar cómo optimizar*
+    })
+
+    if (!mascotaExiste){
+        console.warn(`Lo sentimos, no pudimos encontrar la mascota ${mascotaBuscar} registrada`)
     }
-    )
 }
