@@ -160,16 +160,16 @@ let mascotas = [
     }
 ]
 
-// Función de mostrar mascotas, recibirá un array de mascotas.
-// Podremos reutilizarla más adelante para listar las mascotas filtradas por nombre o dueño.
+// Función de listar información, recibirá un array de mascotas o de dueños.
+// Podremos reutilizarla más adelante para listar las mascotas filtradas por nombre o dueño y para listar los dueños.
 
-function listarMascotas(arrayMascotas) {
-    if (arrayMascotas.length === 0) {
-        // Si no hay mascotas para mostrar, se le informa al usuario
-        console.warn("No se encuentran mascotas registradas")
+function listar(array, info) {
+    if (array.length === 0) {
+        // Si no hay información para mostrar, se le informa al usuario
+        console.warn(`No se encuentra la información de ${info} registrados`)
     } else {
         // console.table para que su visualización sea más adecuada
-        console.table(arrayMascotas)
+        console.table(array)
     }
 }
 
@@ -215,3 +215,19 @@ function agregarMascota(arrayMascotas) {
     console.log(`La mascota ${mascota.nombre} de ${mascota.propietario.nombre} fue agregada satisfactoriamente`)
 }
 
+// Función para listar los dueños
+
+function listarDueños(arrayMascotas) {
+    let dueños = arrayMascotas.map(mascota => {
+        return mascota.propietario
+    })
+    listar(dueños, "dueños")
+}
+
+function obtenerMascotasDueños(arrayMascotas) {
+    let dueño = prompt("Ingresa el nombre del dueño que deseas verificar")
+    let mascotasDueños = arrayMascotas.filter (mascota => {
+        return mascota.propietario.nombre === dueño
+    })
+    listar(mascotasDueños, dueño)
+}
