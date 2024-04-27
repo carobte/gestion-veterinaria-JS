@@ -51,7 +51,6 @@ const menu = () => {
         case 6:
             console.log("Actualizando mascota")
             actualizarMascota()
-            console.log(`Escribe menu() y presiona enter en la consola para continuar`)
             break;
         case 7:
             console.log("Eliminando mascota")
@@ -230,12 +229,13 @@ function listar(array, info) {
 
 function obtenerDatosDueño() {
 
+    // Solicitamos al usuario todos los datos del propietario de la mascota.
     let nombre = prompt("Nombre del dueño").toLowerCase()
     let documento = prompt("Documento del dueño").toLowerCase()
     let telefono = parseInt(prompt("Teléfono del dueño"))
     let correo = prompt("Correo del dueño").toLowerCase()
 
-    // Retornamos un objeto con la información del dueño
+    // Retornamos un objeto con la información del dueño para posteriormente agregarlo a la mascota
     return { nombre, documento, telefono, correo }
 }
 
@@ -243,6 +243,7 @@ function obtenerDatosDueño() {
 
 function obtenerDatosMascota() {
 
+    // Solicitamos al usuario todos los datos que requerimos de la mascota.
     let nombre = prompt("Ingrese el nombre de la mascota").toLowerCase()
     let especie = prompt("Ingrese la especie de la mascota").toLowerCase()
     let raza = prompt("Ingrese la raza de la mascota").toLowerCase()
@@ -251,7 +252,7 @@ function obtenerDatosMascota() {
     let peso = prompt("Ingrese el peso de la mascota").toLowerCase()
     let estado = prompt("Ingrese el estado de la mascota").toLowerCase()
 
-    // Retornamos un objeto con toda la información recolectada
+    // Retornamos un objeto con toda la información recolectada para posteriormente agregarlo al array de mascotas
     return { nombre, especie, raza, edad, peso, estado }
 }
 
@@ -295,12 +296,16 @@ function obtenerMascotasDueños() {
 // Función para buscar una mascota por su nombre
 
 function obtenerMascotaNombre() {
+    // Obtenemos el nombre de la mascota que desea ver
     let mascotaBuscar = prompt("Ingresa el nombre de la mascota que deseas buscar").toLowerCase()
+    // Buscamos esa mascota en el array
     let mascotaEncontrada = mascotas.filter(mascota => {
         return mascota.nombre === mascotaBuscar
     })
+    // Si el array de mascotaEncontrada está vacío, le hacemos saber al usuario que la mascota no está registrada
     if (mascotaEncontrada.length === 0) {
         console.warn(`La mascota no se encuentra registrada`)
+    // Si la mascota sí se encuentra registrada, la mostramos
     } else {
         listar(mascotaEncontrada, "mascotas")
         return mascotaEncontrada
@@ -310,44 +315,58 @@ function obtenerMascotaNombre() {
 // Función para eliminar una mascota por su nombre
 
 function eliminarMascotaNombre() {
+    // Obtenemos el nombre de la mascota que desea eliminar
     let mascotaBuscar = prompt("Ingresa el nombre de la mascota que deseas eliminar").toLowerCase()
+    // Pedimos que confirme que desea eliminarla
     let confirmacion = confirm(`¿Está seguro que desea eliminar a ${mascotaBuscar}?`)
     if (confirmacion) {
+        // Reescribimos el array original con todas las otras mascotas, dejando así por fuera la que quiere eliminar
         mascotas = mascotas.filter(mascota => {
             return mascota.nombre !== mascotaBuscar
         })
+        // Hacemos saber que fue eliminada satisfactoriamente
         console.error(`La mascota ${mascotaBuscar} ha sido eliminada satisfactoriamente`)
     }
 }
 
 function actualizarMascota() {
-    let mascotaBuscar = prompt("Ingresa el nombre de la mascota que deseas editar").toLowerCase()
+    // Obtenemos el nombre de la mascota a actualizar
+    let mascotaBuscar = prompt("Ingresa el nombre de la mascota que deseas actualizar").toLowerCase()
+    // Variable para confirmar si la mascota existe o no dentro del array
     let mascotaExiste = false
+    // Buscamos la mascota que el usuario ingresa en las mascotas que tenemos
     mascotas.forEach(mascota => {
         if (mascota.nombre === mascotaBuscar) {
-            mascotaExiste = true
+            mascotaExiste = true //Si alguna coincide, es porque existe, por lo que cambiamos a true.
+            // Preguntamos qué propiedad desea actualizar
             let propiedad = prompt("¿Qué deseas actualizar? (nombre, especie,raza,peso, estado, propietario").toLowerCase()
+            // En caso de querer actualizar la información del propietario, obtenemos sus datos y confirmamos.
             if (propiedad === "propietario") {
                 let propietarioActualizado = obtenerDatosDueño()
                 let confirmacion = confirm(`¿Deseas cambiar ${propiedad} de ${mascotaBuscar}?`)
                 if (confirmacion) {
+                    // Si el usuario confirma, actualizamos la propiedad con el nuevo objeto de propietario.
                     mascota["propietario"] = propietarioActualizado
+                    // Confirmamos el cambio,  y mostramos la nueva información
                     console.log(`El propietario de ${mascotaBuscar} ha sido actualizado satisfactoriamente:`)
                     console.table(mascota.propietario)
-                }
+                } 
+            // Si es otra propiedad, pedimos el nuevo valor y la confirmación
             } else {
                 let valor = prompt(`¿Cuál es el nuevo valor de ${propiedad}?`)
                 let confirmacion = confirm(`¿Deseas cambiar ${propiedad} de ${mascotaBuscar}?`)
                 if (confirmacion) {
+                    // si confirma, entonces procedemos a hacer el cambio y mostrarlo.
                     mascota[propiedad] = valor
                     console.log(`La mascota ha sido actualizada satisfactoriamente:`)
                     console.table(mascota)
-                }
+                } 
             }
         } 
     })
-
+    // Si no encuentra una mascota, le hacemos saber al usuario que no existe y ejecutamos el menu nuevamente.
     if (!mascotaExiste){
         console.warn(`Lo sentimos, no pudimos encontrar la mascota ${mascotaBuscar} registrada`)
+        menu()
     }
 }
