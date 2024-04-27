@@ -166,7 +166,7 @@ let mascotas = [
 function listar(array, info) {
     if (array.length === 0) {
         // Si no hay información para mostrar, se le informa al usuario
-        console.warn(`No se encuentra la información de ${info} registrados`)
+        console.warn(`No se encuentra la información de ${info} registrada`)
     } else {
         // console.table para que su visualización sea más adecuada
         console.table(array)
@@ -204,22 +204,22 @@ function obtenerDatosMascota() {
 
 // Función para agregar mascotas, recibe el array donde se va a agregar
 
-function agregarMascota(arrayMascotas) {
+function agregarMascota() {
     // Obtener la información que requerimos
     let mascota = obtenerDatosMascota()
     let propietario = obtenerDatosDueño()
     // Le pasamos la información del propietario a la mascota
     mascota.propietario = propietario
     // Enviamos la información de la mascota al array
-    arrayMascotas.push(mascota)
+    mascotas.push(mascota)
     console.log(`La mascota ${mascota.nombre} de ${mascota.propietario.nombre} fue agregada satisfactoriamente`)
 }
 
 // Función para listar los dueños
 
-function listarDueños(arrayMascotas) {
+function listarDueños() {
     // Primero obtenemos solo la información de los dueños registrados
-    let dueños = arrayMascotas.map(mascota => {
+    let dueños = mascotas.map(mascota => {
         return mascota.propietario
     })
     // Listamos la información del array de dueños registrados
@@ -228,13 +228,33 @@ function listarDueños(arrayMascotas) {
 
 // Función para obtener mascotas de un dueño
 
-function obtenerMascotasDueños(arrayMascotas) {
+function obtenerMascotasDueños() {
     // Primero obtenemos el dueño que se quiere buscar
     let dueño = prompt("Ingresa el nombre del dueño que deseas verificar")
     // Obtenemos el array de mascotas de ese dueño específico
-    let mascotasDueños = arrayMascotas.filter (mascota => {
+    let mascotasDueños = mascotas.filter (mascota => {
         return mascota.propietario.nombre === dueño
     })
     // Listamos el array de mascotas de un dueño específico
     listar(mascotasDueños, dueño)
+}
+
+// Función para buscar una mascota por su nombre
+
+function obtenerMascotaNombre() {
+    let mascotaBuscar = prompt("Ingresa el nombre de la mascota que deseas buscar")
+    let mascotaEncontrada = mascotas.filter(mascota => {
+        return mascota.nombre === mascotaBuscar
+    })
+    listar(mascotaEncontrada, mascotaBuscar)
+}
+
+// Función para eliminar una mascota por su nombre
+
+function eliminarMascotaNombre() {
+    let mascotaBuscar = prompt("Ingresa el nombre de la mascota que deseas eliminar")
+    mascotas = mascotas.filter(mascota => {
+        return mascota.nombre !== mascotaBuscar
+    })
+    console.log(`${mascotaBuscar} ha sido eliminada satisfactoriamente`)
 }
