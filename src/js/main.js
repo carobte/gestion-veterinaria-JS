@@ -301,10 +301,10 @@ function obtenerMascotaNombre() {
     // Si el array de mascotaEncontrada está vacío, le hacemos saber al usuario que la mascota no está registrada
     if (mascotaEncontrada.length === 0) {
         console.warn(`La mascota no se encuentra registrada`)
+        menu()
     // Si la mascota sí se encuentra registrada, la mostramos
     } else {
         listar(mascotaEncontrada, "mascotas")
-        return mascotaEncontrada
     }
 }
 
@@ -325,6 +325,8 @@ function eliminarMascotaNombre() {
     }
     menu()
 }
+
+// Función para actualizar la mascota
 
 function actualizarMascota() {
     // Obtenemos el nombre de la mascota a actualizar
