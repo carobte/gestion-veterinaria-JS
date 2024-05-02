@@ -158,7 +158,7 @@ function obtenerMascotaNombre() {
     if (mascotaEncontrada.length === 0) {
         console.warn(`La mascota no se encuentra registrada`)
         menu()
-    // Si la mascota sí se encuentra registrada, la mostramos
+        // Si la mascota sí se encuentra registrada, la mostramos
     } else {
         listar(mascotaEncontrada, "mascotas")
     }
@@ -205,8 +205,8 @@ function actualizarMascota() {
                     // Confirmamos el cambio,  y mostramos la nueva información
                     console.log(`El propietario de ${mascotaBuscar} ha sido actualizado satisfactoriamente:`)
                     console.table(mascota.propietario)
-                } 
-            // Si es otra propiedad, pedimos el nuevo valor y la confirmación
+                }
+                // Si es otra propiedad, pedimos el nuevo valor y la confirmación
             } else {
                 let valor = prompt(`¿Cuál es el nuevo valor de ${propiedad}?`)
                 let confirmacion = confirm(`¿Deseas cambiar ${propiedad} de ${mascotaBuscar}?`)
@@ -215,13 +215,13 @@ function actualizarMascota() {
                     mascota[propiedad] = valor
                     console.log(`La mascota ha sido actualizada satisfactoriamente:`)
                     console.table(mascota)
-                } 
+                }
             }
-        } 
+        }
     })
 
     // Si no encuentra una mascota, le hacemos saber al usuario que no existe y ejecutamos el menu nuevamente.
-    if (!mascotaExiste){
+    if (!mascotaExiste) {
         console.warn(`Lo sentimos, no pudimos encontrar la mascota ${mascotaBuscar} registrada`)
     }
     menu()
@@ -232,3 +232,25 @@ function actualizarMascota() {
 const main = document.querySelector("main")
 
 main.classList.add("d-flex", "flex-wrap", "gap-3", "justify-content-center")
+
+const btnLimpiar = document.querySelector("#limpiar")
+
+/* 
+
+function limpiar() {
+    btnLimpiar.addEventListener("click", () => {
+        console.log("click");
+        main.innerHTML = ""
+    })
+
+    limpiar()
+
+} */
+
+function limpiar2() {
+    main.innerHTML =""
+}
+btnLimpiar.addEventListener("click", function(){
+    limpiar2()
+})
+
