@@ -236,8 +236,32 @@ main.classList.add("d-flex", "flex-wrap", "gap-3", "justify-content-center")
 const btnLimpiar = document.querySelector("#limpiar")
 
 function limpiar2() {
-    main.innerHTML =""
+    main.innerHTML = ""
 }
-btnLimpiar.addEventListener("click", function(){
+btnLimpiar.addEventListener("click", function () {
     limpiar2()
+})
+
+
+// Impresión mascotas
+
+const mascotasContainer = document.getElementById("mascotas-container")
+
+mascotas.forEach(mascota => {
+    mascotasContainer.innerHTML += `
+    <article class="card" style="width: 18rem;">
+        <img src="${mascota.img}"
+            class="card-img-top" alt="${mascota.especie} ${mascota.raza}">
+        <div class="card-body">
+            <h5 class="card-title">${mascota.nombre} </h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Especie: ${mascota.especie} </li>
+            <li class="list-group-item">Raza: ${mascota.raza}</li>
+            <li class="list-group-item">Edad:${mascota.edad} </li>
+            <li class="list-group-item">Peso:${mascota.peso} </li>
+            <li class="list-group-item">Estado:${mascota.estado} </li>
+            <li class="list-group-item">Dueño:${mascota.propietario.nombre} </li>
+        </ul>
+    </article> `
 })
