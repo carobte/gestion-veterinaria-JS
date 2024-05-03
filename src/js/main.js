@@ -235,22 +235,9 @@ main.classList.add("d-flex", "flex-wrap", "gap-3", "justify-content-center")
 
 const btnLimpiar = document.querySelector("#limpiar")
 
-/* 
-
-function limpiar() {
-    btnLimpiar.addEventListener("click", () => {
-        console.log("click");
-        main.innerHTML = ""
-    })
-
-    limpiar()
-
-} */
-
 function limpiar2() {
     main.innerHTML =""
 }
 btnLimpiar.addEventListener("click", function(){
     limpiar2()
 })
-
