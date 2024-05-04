@@ -33,7 +33,7 @@ mascotas.forEach(mascota => {
         <img src="${img}"
             class="card-img-top object-fit-cover" height="250px" alt="${especie} ${raza}"> 
         <ul class="list-group list-group-flush">
-            <ul class="list-group-item text-capitalize fs-5"> ${nombre} </ul>
+            <li class="list-group-item text-capitalize fs-5"> ${nombre} </li>
             <li class="list-group-item text-capitalize"><span class="fw-bold">Especie:</span> ${especie} </li>
             <li class="list-group-item text-capitalize"><span class="fw-bold">Raza:</span> ${raza}</li>
             <li class="list-group-item"><span class="fw-bold">Edad:</span> ${edad} años</li>
