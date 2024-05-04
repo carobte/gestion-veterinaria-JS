@@ -23,7 +23,7 @@ let mascotas = [
         edad: 3,
         peso: "10",
         estado: "estable",
-        img: "https://static.wikia.nocookie.net/wikidog/images/4/43/Gran_Dan%C3%A9s.png/revision/latest?cb=20170711224841&path-prefix=es",
+        img:"https://www.purina.es/sites/default/files/styles/square_medium_440x440/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-07Great-Dane.jpg?itok=zc4jIyCU",
         propietario: {
             nombre: "juan perez",
             documento: "87654321",
@@ -83,7 +83,7 @@ let mascotas = [
         edad: 8,
         peso: "3",
         estado: "critico",
-        img: "https://pamipe.com/wiki/wp-content/uploads/2022/09/Chihuahua-800x780.png",
+        img: "https://www.purina.es/sites/default/files/styles/square_medium_440x440/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09Chihuahua20smooth20coat.jpg?itok=M0z5cV0g",
         propietario: {
             nombre: "laura gonzalez",
             documento: "65432198",
