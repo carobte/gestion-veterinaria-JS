@@ -232,6 +232,23 @@ function actualizarMascota() {
 const main = document.querySelector("main")
 const mascotasContainer = document.getElementById("mascotas")
 const propietariosContainer = document.getElementById("propietarios")
+const html = document.querySelector("html")
+
+// Cambio de tema
+
+function cambiarTema() {
+    const tema = html.getAttribute("data-bs-theme")
+    const icono = document.getElementById("cambiar-tema")
+
+    if (tema === "light"){
+        html.setAttribute("data-bs-theme","dark" ) 
+        icono.classList.replace("bi-moon-fill", "bi-sun-fill")
+    } else {
+        html.setAttribute("data-bs-theme","light" ) 
+        icono.classList.replace("bi-sun-fill", "bi-moon-fill")
+    }
+    
+}
 
 // Impresión mascotas
 
