@@ -231,18 +231,6 @@ function actualizarMascota() {
 
 const main = document.querySelector("main")
 
-main.classList.add("d-flex", "flex-wrap", "gap-3", "justify-content-center")
-
-const btnLimpiar = document.querySelector("#limpiar")
-
-function limpiar2() {
-    main.innerHTML = ""
-}
-btnLimpiar.addEventListener("click", function () {
-    limpiar2()
-})
-
-
 // Impresión mascotas
 
 const mascotasContainer = document.getElementById("mascotas-container")
@@ -251,17 +239,15 @@ mascotas.forEach(mascota => {
     mascotasContainer.innerHTML += `
     <article class="card" style="width: 18rem;">
         <img src="${mascota.img}"
-            class="card-img-top" alt="${mascota.especie} ${mascota.raza}">
-        <div class="card-body">
-            <h5 class="card-title">${mascota.nombre} </h5>
-        </div>
+            class="card-img-top object-fit-cover" height="200px" alt="${mascota.especie} ${mascota.raza}"> 
+        <h5 class=" card-body card-title text-capitalize"> ${mascota.nombre} </h5>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Especie: ${mascota.especie} </li>
-            <li class="list-group-item">Raza: ${mascota.raza}</li>
-            <li class="list-group-item">Edad:${mascota.edad} </li>
-            <li class="list-group-item">Peso:${mascota.peso} </li>
-            <li class="list-group-item">Estado:${mascota.estado} </li>
-            <li class="list-group-item">Dueño:${mascota.propietario.nombre} </li>
+            <li class="list-group-item text-capitalize"><span class="fw-bold">Especie:</span> ${mascota.especie} </li>
+            <li class="list-group-item text-capitalize"><span class="fw-bold">Raza:</span> ${mascota.raza}</li>
+            <li class="list-group-item"><span class="fw-bold">Edad:</span> ${mascota.edad} años</li>
+            <li class="list-group-item"><span class="fw-bold">Peso:</span> ${mascota.peso} kg</li>
+            <li class="list-group-item text-capitalize"><span class="fw-bold">Estado:</span> ${mascota.estado} </li>
+            <li class="list-group-item text-capitalize"><span class="fw-bold">Dueño:</span> ${mascota.propietario.nombre} </li>
         </ul>
     </article> `
 })
