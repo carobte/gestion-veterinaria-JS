@@ -152,3 +152,36 @@ let mascotas = [
         }
     }
 ]
+
+let servicios = [
+    {
+        nombre: "Consulta General",
+        precio: 50.000,
+        descripcion: "Una revisión completa de la salud de la mascota, incluyendo examen físico, consejos de cuidado y recomendaciones de vacunación."
+    },
+    {
+        nombre: "Paquete de vacunación básica",
+        precio: 70.000,
+        descripcion: "Incluye vacunas esenciales para prevenir enfermedades comunes en mascotas, como la rabia, moquillo, parvovirus, entre otras."
+    },
+    {
+        nombre: "Esterilización/Castración",
+        precio: 450.000,
+        descripcion: "Cirugía para esterilizar a las mascotas, lo que ayuda a controlar la población y reduce el riesgo de ciertas enfermedades y comportamientos no deseados. "
+    },
+    {
+        nombre: "Limpieza dental profesional",
+        precio: 100.000,
+        descripcion: "Eliminación de placa y sarro de los dientes de la mascota, ayudando a prevenir enfermedades periodontales y promoviendo una buena salud bucal."
+    },
+    {
+        nombre: "Consulta con etólogo",
+        precio: 200.000,
+        descripcion: "Evaluación y asesoramiento para abordar problemas de comportamiento en mascotas, como la agresividad, ansiedad por separación, etc."
+    },
+    {
+        nombre: "Grooming profesional",
+        precio: 40.000,
+        descripcion: "Baño, corte de pelo y cuidado estético para mantener la apariencia y salud de la mascota, incluyendo recorte de uñas y limpieza de oídos."
+    }
+];
