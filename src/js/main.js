@@ -230,18 +230,18 @@ function actualizarMascota() {
 // Manipulación del DOM.
 
 const main = document.querySelector("main")
+const mascotasContainer = document.getElementById("mascotas")
+const propietariosContainer = document.getElementById("propietarios")
 
 // Impresión mascotas
-
-const mascotasContainer = document.getElementById("mascotas-container")
 
 mascotas.forEach(mascota => {
     mascotasContainer.innerHTML += `
     <article class="card" style="width: 18rem;">
         <img src="${mascota.img}"
-            class="card-img-top object-fit-cover" height="200px" alt="${mascota.especie} ${mascota.raza}"> 
-        <h5 class=" card-body card-title text-capitalize"> ${mascota.nombre} </h5>
+            class="card-img-top object-fit-cover" height="300px" alt="${mascota.especie} ${mascota.raza}"> 
         <ul class="list-group list-group-flush">
+            <ul class="list-group-item text-capitalize fs-5"> ${mascota.nombre} </ul>
             <li class="list-group-item text-capitalize"><span class="fw-bold">Especie:</span> ${mascota.especie} </li>
             <li class="list-group-item text-capitalize"><span class="fw-bold">Raza:</span> ${mascota.raza}</li>
             <li class="list-group-item"><span class="fw-bold">Edad:</span> ${mascota.edad} años</li>
@@ -251,3 +251,19 @@ mascotas.forEach(mascota => {
         </ul>
     </article> `
 })
+
+// Impresión propietarios 
+
+for (let i = 0; i < mascotas.length; i++) {
+    const propietario = mascotas[i].propietario
+    propietariosContainer.innerHTML += `
+    <article class="card p-4" style="width: 20rem;">
+        <h5 class="card-title text-capitalize">${propietario.nombre} </h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span class="fw-bold">Documento: </span>${propietario.documento}</li>
+            <li class="list-group-item"><span class="fw-bold">Teléfono: </span>${propietario.telefono}</li>
+            <li class="list-group-item"><span class="fw-bold">Correo: </span>${propietario.correo}</li>
+        </ul>
+    </article>
+    `
+}

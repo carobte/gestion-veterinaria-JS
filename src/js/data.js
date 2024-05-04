@@ -25,7 +25,7 @@ let mascotas = [
         estado: "estable",
         img:"https://www.purina.es/sites/default/files/styles/square_medium_440x440/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-07Great-Dane.jpg?itok=zc4jIyCU",
         propietario: {
-            nombre: "juan perez",
+            nombre: "maria garcia",
             documento: "87654321",
             telefono: "555-987-6543",
             correo: "mariagarcia@example.com"
@@ -55,10 +55,10 @@ let mascotas = [
         estado: "estable",
         img: "https://www.bunko.pet/__export/1661988965226/sites/debate/img/2022/08/31/pomerania_blanco.jpg_1902800913.jpg",
         propietario: {
-            nombre: "ana lopez",
+            nombre: "ana maria lopez",
             documento: "98765432",
             telefono: "555-333-4444",
-            correo: "anlopez@example.com"
+            correo: "anamalopez@example.com"
         }
     },
     {
@@ -98,9 +98,9 @@ let mascotas = [
         edad: 2,
         peso: "0.05",
         estado: "estable",
-        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHThhZcUM-0rdtMqMILXcAvTSI7PkzWWiGyE7GuJxAveCgfzTemAaMnWeHyJqkFC6r0oY&usqp=CAU",
+        img:"https://www.purina.es/sites/default/files/styles/square_medium_440x440/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-08Siberian20Husky1.jpg?itok=8DnhAzfy",
         propietario: {
-            nombre: "fernanda castro",
+            nombre: "roberto diaz",
             documento: "36925814",
             telefono: "555-777-8888",
             correo: "robertodiaz@example.com"
@@ -130,10 +130,10 @@ let mascotas = [
         estado: "estable",
         img: "https://www.purina.es/sites/default/files/2021-02/BREED%20Hero_0018_border_collie.jpg",
         propietario: {
-            nombre: "david ruiz",
+            nombre: "david alejandro ruiz",
             documento: "21436587",
             telefono: "555-222-3333",
-            correo: "davidruiz@example.com"
+            correo: "davidalejoruiz@example.com"
         }
     },
     {
