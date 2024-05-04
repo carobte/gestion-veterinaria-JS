@@ -233,6 +233,8 @@ const main = document.querySelector("main")
 const mascotasContainer = document.getElementById("mascotas")
 const propietariosContainer = document.getElementById("propietarios")
 const html = document.querySelector("html")
+const serviciosContainer = document.getElementById("servicios")
+
 
 // Cambio de tema
 
@@ -247,7 +249,7 @@ function cambiarTema() {
         html.setAttribute("data-bs-theme","light" ) 
         icono.classList.replace("bi-sun-fill", "bi-moon-fill")
     }
-    
+
 }
 
 // Impresión mascotas
@@ -266,7 +268,8 @@ mascotas.forEach(mascota => {
             <li class="list-group-item text-capitalize"><span class="fw-bold">Estado:</span> ${mascota.estado} </li>
             <li class="list-group-item text-capitalize"><span class="fw-bold">Dueño:</span> ${mascota.propietario.nombre} </li>
         </ul>
-    </article> `
+    </article> 
+    `
 })
 
 // Impresión propietarios 
@@ -283,4 +286,21 @@ for (let i = 0; i < mascotas.length; i++) {
         </ul>
     </article>
     `
+}
+
+// Impresión servicios
+
+for (let i = 0; i < servicios.length; i++) {
+    const servicio = servicios[i]
+    serviciosContainer.innerHTML += `
+    <article class="card w-25" >
+        <h5 class="card-header bg-body-secondary"> ${servicio.nombre} </h5>
+        <div class="card-body">
+        <h6 class="card-title">Descripción:</h6>
+        <p class="card-text">${servicio.descripcion}</p>
+        <button class="btn btn-outline-primary">Deseo más información <i class="bi bi-info-circle"></i></button>
+        </div>
+    </article>
+    `
+    
 }
