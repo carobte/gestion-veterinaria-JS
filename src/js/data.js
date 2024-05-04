@@ -17,13 +17,13 @@ let mascotas = [
         }
     },
     {
-        nombre: "scooby",
+        nombre: "Vala",
         especie: "perro",
         raza: "gran danes",
         edad: 3,
         peso: "10",
         estado: "estable",
-        img:"https://www.purina.es/sites/default/files/styles/square_medium_440x440/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-07Great-Dane.jpg?itok=zc4jIyCU",
+        img:"https://www.purina.es/sites/default/files/styles/square_medium_440x440/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-07Great20Dane2.jpg?itok=zgulVzVp",
         propietario: {
             nombre: "maria garcia",
             documento: "87654321",
@@ -167,15 +167,15 @@ let servicios = [
     {
         nombre: "Esterilización/Castración",
         precio: 450.000,
-        descripcion: "Cirugía para esterilizar a las mascotas, lo que ayuda a controlar la población y reduce el riesgo de ciertas enfermedades y comportamientos no deseados. "
+        descripcion: "Cirugía para esterilizar a las mascotas, ayuda a controlar la población y reduce el riesgo de ciertas enfermedades y comportamientos no deseados. "
     },
     {
         nombre: "Limpieza dental profesional",
         precio: 100.000,
-        descripcion: "Eliminación de placa y sarro de los dientes de la mascota, ayudando a prevenir enfermedades periodontales y promoviendo una buena salud bucal."
+        descripcion: "Eliminación de placa y sarro de los dientes de la mascota, ayuda a prevenir enfermedades periodontales y promueve una buena salud bucal."
     },
     {
-        nombre: "Consulta con etólogo",
+        nombre: "Consulta con Etólogo",
         precio: 200.000,
         descripcion: "Evaluación y asesoramiento para abordar problemas de comportamiento en mascotas, como la agresividad, ansiedad por separación, etc."
     },
