@@ -10,10 +10,10 @@ let mascotas = [
         estado: "critico",
         img: "https://www.purina.es/sites/default/files/styles/square_medium_440x440/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09labrador.jpg?itok=Xab_MZwK",
         propietario: {
-            nombre: "juan perez",
+            nombre: "juan pablo perez",
             documento: "12345678",
             telefono: "555-123-4567",
-            correo: "juanperez@example.com"
+            correo: "juanpabloperez@example.com"
         }
     },
     {
@@ -152,6 +152,8 @@ let mascotas = [
         }
     }
 ]
+
+// Array para servicios
 
 let servicios = [
     {

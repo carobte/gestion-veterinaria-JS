@@ -78,5 +78,3 @@ for (let i = 0; i < servicios.length; i++) {
     </article>
     `
 }
-
-
